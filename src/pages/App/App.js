@@ -3,6 +3,8 @@ import CircleSelector from '../../components/CircleSelector/CircleSelector';
 import Circles from '../../components/Circles/Circles';
 import './App.css';
 
+const selButton = ['1','2','3','4'];
+
 class App extends Component {
     constructor() {
         super();
@@ -13,13 +15,17 @@ class App extends Component {
     
       getInitialState() {
         return {
-            selColorIdx: 1
+            selButtonIdx: 0
         };
       }
 
-    handleClick = (idx) => {
-        this.setState({selColorIdx: idx});
+    handleClick = (selButton) => {
+        this.setState({selButtonIdx: selButton});
       }
+    
+    handleSelect = (idx) => {
+        this.setState({selButtonIdx: idx});
+    }
     
 
   render() {
@@ -27,12 +33,17 @@ class App extends Component {
       <div className="App">
         <header className="App-header">UNIT 4 FINAL ASSESSMENT</header>
         <main>
-            Selected Color: {this.state.selColorIdx}
+            
+          Selected Color: {this.state.selButtonIdx}
           <CircleSelector 
-           selColorIdx = {this.state.selColorIdx}
+           selButton={selButton}
+           selButtonIdx = {this.state.selButtonIdx}
            handleClick = {this.handleClick}
           />
-          <Circles />
+          <Circles 
+            selButtonIdx = {this.state.selButtonIdx}
+            handleButton = {this.handleSelect}
+          />
         </main>
       </div>
     );

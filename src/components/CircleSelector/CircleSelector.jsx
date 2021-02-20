@@ -1,11 +1,13 @@
 import styles from './CircleSelector.module.css';
 
-const CircleSelector = () => (
+const CircleSelector = (props, idx) => (
     <div className={styles.CircleSelector}>
-        <button className={styles.CircleSelector}>Select Circle 1</button>
-        <button className={styles.CircleSelector}>Select Circle 2</button>
-        <button className={styles.CircleSelector}>Select Circle 3</button>
-        <button className={styles.CircleSelector}>Select Circle 4</button>
+        <div>
+            {props.selButton.map(selButton =>
+            
+            <button className={styles.CircleSelector} key={idx} onClick={() => props.handleClick(selButton)}>Select Circle {selButton}</button>
+            )}
+        </div> 
     </div>
   );
   
