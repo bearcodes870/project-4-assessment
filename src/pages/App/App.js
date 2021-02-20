@@ -15,7 +15,7 @@ class App extends Component {
     
       getInitialState() {
         return {
-            selButtonIdx: 0
+            selButtonIdx: 1
         };
       }
 
@@ -33,8 +33,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">UNIT 4 FINAL ASSESSMENT</header>
         <main>
-            
-          Selected Color: {this.state.selButtonIdx}
           <CircleSelector 
            selButton={selButton}
            selButtonIdx = {this.state.selButtonIdx}

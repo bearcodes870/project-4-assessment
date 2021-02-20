@@ -5,7 +5,7 @@ const CircleSelector = (props, idx) => (
         <div>
             {props.selButton.map(selButton =>
             
-            <button className={idx == props.selButtonIdx ? 'styles.selected' : ''} key={idx} onClick={() => props.handleClick(selButton)}>Select Circle {selButton}</button>
+            <button className={props.selButtonIdx == `${selButton}` ? `${styles.selected}` : ''} key={idx} onClick={() => props.handleClick(selButton)}>Select Circle {selButton}</button>
             )}
         </div> 
     </div>
