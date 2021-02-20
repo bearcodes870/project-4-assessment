@@ -41,8 +41,8 @@ class App extends Component {
            handleClick = {this.handleClick}
           />
           <Circles 
+            selButton={selButton}
             selButtonIdx = {this.state.selButtonIdx}
-            handleButton = {this.handleSelect}
           />
         </main>
       </div>
