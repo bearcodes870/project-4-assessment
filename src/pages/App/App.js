@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CircleSelector from '../../components/CircleSelector/CircleSelector';
+import Circles from '../../components/Circles/Circles';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,10 @@ class App extends Component {
             selColorIdx: 1
         };
       }
+
+    handleClick = (idx) => {
+        this.setState({selColorIdx: idx});
+      }
     
 
   render() {
@@ -25,7 +30,9 @@ class App extends Component {
             Selected Color: {this.state.selColorIdx}
           <CircleSelector 
            selColorIdx = {this.state.selColorIdx}
+           handleClick = {this.handleClick}
           />
+          <Circles />
         </main>
       </div>
     );
