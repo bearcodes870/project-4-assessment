@@ -6,8 +6,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-          selColorIdx: '',
-          ...this.getInitialState(),
+          ...this.getInitialState()
         };
       }
     
@@ -24,7 +23,9 @@ class App extends Component {
         <header className="App-header">UNIT 4 FINAL ASSESSMENT</header>
         <main>
             Selected Color: {this.state.selColorIdx}
-          <CircleSelector />
+          <CircleSelector 
+           selColorIdx = {this.state.selColorIdx}
+          />
         </main>
       </div>
     );
